@@ -1,0 +1,13 @@
+DELIMITER //
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_login_user`(
+    IN p_username varchar(500),
+    IN p_password varchar(500)
+)
+BEGIN
+	SELECT usu.usu_id,usu.usu_usuario, per.pers_nombre_razonsocial as nombres, per.pers_apellido as apellidos, per.pers_correo_electronico as correo, usu.tbl_rol_rol_id, rol.rol_nombre  FROM tbl_usuario as usu
+	INNER JOIN tbl_empleado as emp ON emp.emp_id = usu.tbl_empleado_emp_id
+	INNER JOIN tbl_persona as per ON per.pers_id = emp.tbl_persona_pers_id
+	INNER JOIN tbl_rol as rol ON rol.rol_id = usu.tbl_rol_rol_id
+	WHERE usu_usuario = username AND usu_contrasena = password AND usu_estado = 'activo';
+END //
+DELIMITER ;
