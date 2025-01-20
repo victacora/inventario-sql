@@ -8,6 +8,6 @@ BEGIN
 	INNER JOIN tbl_empleado as emp ON emp.emp_id = usu.tbl_empleado_emp_id
 	INNER JOIN tbl_persona as per ON per.pers_id = emp.tbl_persona_pers_id
 	INNER JOIN tbl_rol as rol ON rol.rol_id = usu.tbl_rol_rol_id
-	WHERE usu_usuario = username AND usu_contrasena = password AND usu_estado = 'activo';
+	WHERE  usu_usuario = p_username AND usu_contrasena = p_password AND usu_estado = 'activo';
 END //
 DELIMITER ;

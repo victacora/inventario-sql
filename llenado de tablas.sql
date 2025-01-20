@@ -151,9 +151,9 @@ VALUES
 -- Insertar datos en la tabla tbl_usuario
 INSERT INTO naturales_db.tbl_usuario (usu_usuario, usu_contrasena, usu_estado, usu_fecha_creacion, tbl_empleado_emp_id, tbl_rol_rol_id) 
 VALUES 
-('admin', 'adminpass', 'activo', '2024-01-01', 1, 1), 
-('empleado1', 'empleadopass', 'activo', '2024-01-02', 2, 2), 
-('cliente1', 'clientepass', 'activo', '2024-01-03', 3, 3);
+('admin', 'd74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1', 'activo', '2024-01-01', 1, 1), 
+('empleado1', 'd74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1', 'activo', '2024-01-02', 2, 2), 
+('cliente1', 'd74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1', 'activo', '2024-01-03', 3, 3);
 
 
 
