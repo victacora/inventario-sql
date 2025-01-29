@@ -80,7 +80,7 @@ CREATE TABLE `tbl_cliente` (
   PRIMARY KEY (`cli_id`,`tbl_persona_pers_id`),
   KEY `fk_tbl_cliente_tbl_persona1_idx` (`tbl_persona_pers_id`),
   CONSTRAINT `fk_tbl_cliente_tbl_persona1` FOREIGN KEY (`tbl_persona_pers_id`) REFERENCES `tbl_persona` (`pers_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `tbl_cliente` (
 
 LOCK TABLES `tbl_cliente` WRITE;
 /*!40000 ALTER TABLE `tbl_cliente` DISABLE KEYS */;
-INSERT INTO `tbl_cliente` VALUES (1,1),(2,2),(3,3);
+INSERT INTO `tbl_cliente` VALUES (1,1),(2,2),(3,3),(5,43);
 /*!40000 ALTER TABLE `tbl_cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -105,7 +105,7 @@ CREATE TABLE `tbl_compra` (
   `comp_fecha_compra` date NOT NULL,
   `comp_total` decimal(10,0) NOT NULL,
   PRIMARY KEY (`comp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -114,7 +114,7 @@ CREATE TABLE `tbl_compra` (
 
 LOCK TABLES `tbl_compra` WRITE;
 /*!40000 ALTER TABLE `tbl_compra` DISABLE KEYS */;
-INSERT INTO `tbl_compra` VALUES (1,'2024-01-10',150000),(2,'2024-02-05',200000),(3,'2024-03-20',175000),(4,'2025-01-22',24);
+INSERT INTO `tbl_compra` VALUES (1,'2024-01-10',150000),(2,'2024-02-05',200000),(3,'2024-03-20',175000),(4,'2025-01-22',24),(5,'2024-02-05',140000),(6,'2024-02-05',140000),(7,'2024-02-05',140000),(8,'2024-02-05',140000),(9,'2024-02-05',140000),(10,'2024-01-10',50000),(11,'2024-01-10',50000),(12,'2024-01-10',50000),(13,'2025-01-28',240),(14,'2025-01-28',240),(15,'2025-01-28',240),(16,'2025-01-28',240),(17,'2025-01-28',240),(18,'2025-01-28',240),(19,'2025-01-28',240),(20,'2025-01-28',240),(21,'2025-01-28',240),(22,'2024-01-10',50000);
 /*!40000 ALTER TABLE `tbl_compra` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +173,7 @@ CREATE TABLE `tbl_detalle_compraproducto` (
 
 LOCK TABLES `tbl_detalle_compraproducto` WRITE;
 /*!40000 ALTER TABLE `tbl_detalle_compraproducto` DISABLE KEYS */;
-INSERT INTO `tbl_detalle_compraproducto` VALUES (1,1,'FAC001',10,5000),(1,4,'FAC004',2,12),(2,2,'FAC002',20,7000),(3,3,'FAC003',15,6000);
+INSERT INTO `tbl_detalle_compraproducto` VALUES (1,1,'FAC001',10,5000),(1,4,'FAC004',2,12),(1,10,'FAC001',10,5000),(1,11,'FAC001',10,5000),(1,12,'FAC001',10,5000),(1,13,'FAC0001',2,120),(1,14,'FAC0001',2,120),(1,15,'FAC0001',2,120),(1,16,'FAC0001',2,120),(1,17,'FAC0001',2,120),(1,18,'FAC0001',2,120),(1,19,'FAC0001',2,120),(1,20,'FAC0001',2,120),(1,21,'FAC000120324',2,120),(1,22,'FAC001',10,5000),(2,2,'FAC002',20,7000),(2,5,'FAC002',20,7000),(2,6,'FAC002',20,7000),(2,7,'FAC002',20,7000),(2,8,'FAC002',20,7000),(2,9,'FAC002',20,7000),(3,3,'FAC003',15,6000);
 /*!40000 ALTER TABLE `tbl_detalle_compraproducto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,7 +223,7 @@ CREATE TABLE `tbl_devolucion` (
   PRIMARY KEY (`dev_id`,`tbl_venta_vent_id`),
   KEY `fk_tbl_devolucion_tbl_venta1_idx` (`tbl_venta_vent_id`),
   CONSTRAINT `fk_tbl_devolucion_tbl_venta1` FOREIGN KEY (`tbl_venta_vent_id`) REFERENCES `tbl_venta` (`vent_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -232,7 +232,7 @@ CREATE TABLE `tbl_devolucion` (
 
 LOCK TABLES `tbl_devolucion` WRITE;
 /*!40000 ALTER TABLE `tbl_devolucion` DISABLE KEYS */;
-INSERT INTO `tbl_devolucion` VALUES (1,'2024-07-15','Producto defectuoso',1),(2,'2024-08-10','Error en el pedido',2),(3,'2024-09-05','Producto dañado en el envío',3);
+INSERT INTO `tbl_devolucion` VALUES (1,'2024-07-15','Producto defectuoso',1),(2,'2024-08-10','Error en el pedido',2),(3,'2024-09-05','Producto dañado en el envío',3),(5,'2024-09-05','Producto dañado en el envío',3),(6,'2024-09-05','Producto dañado en el envío',3);
 /*!40000 ALTER TABLE `tbl_devolucion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,7 +249,7 @@ CREATE TABLE `tbl_empleado` (
   PRIMARY KEY (`emp_id`,`tbl_persona_pers_id`),
   KEY `fk_tbl_empleado_tbl_persona1_idx` (`tbl_persona_pers_id`),
   CONSTRAINT `fk_tbl_empleado_tbl_persona1` FOREIGN KEY (`tbl_persona_pers_id`) REFERENCES `tbl_persona` (`pers_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,7 +258,7 @@ CREATE TABLE `tbl_empleado` (
 
 LOCK TABLES `tbl_empleado` WRITE;
 /*!40000 ALTER TABLE `tbl_empleado` DISABLE KEYS */;
-INSERT INTO `tbl_empleado` VALUES (1,1),(2,2),(3,3);
+INSERT INTO `tbl_empleado` VALUES (1,1),(2,2),(3,3),(16,36);
 /*!40000 ALTER TABLE `tbl_empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,7 +277,7 @@ CREATE TABLE `tbl_inventario` (
   PRIMARY KEY (`inv_id`,`tbl_empleado_emp_id`),
   KEY `fk_tbl_inventario_tbl_empleado1_idx` (`tbl_empleado_emp_id`),
   CONSTRAINT `fk_tbl_inventario_tbl_empleado1` FOREIGN KEY (`tbl_empleado_emp_id`) REFERENCES `tbl_empleado` (`emp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -286,7 +286,7 @@ CREATE TABLE `tbl_inventario` (
 
 LOCK TABLES `tbl_inventario` WRITE;
 /*!40000 ALTER TABLE `tbl_inventario` DISABLE KEYS */;
-INSERT INTO `tbl_inventario` VALUES (1,'2024-06-15','Inventario inicial',1),(2,'2024-07-20','Inventario actualizado',2),(3,'2024-08-25','Inventario revisado',3);
+INSERT INTO `tbl_inventario` VALUES (1,'2024-06-15','Inventario inicial',1),(2,'2024-07-20','Inventario actualizado',2),(3,'2024-08-25','Inventario revisado',3),(4,'2024-08-25','Inventario revisado',1),(5,'2024-08-25','Inventario revisado',2),(6,'2024-08-25','Inventario revisado',1),(7,'2024-08-25','Inventario revisado',2);
 /*!40000 ALTER TABLE `tbl_inventario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -307,7 +307,7 @@ CREATE TABLE `tbl_inventario_producto` (
   KEY `fk_tbl_inventario_producto_tbl_inventario1_idx` (`tbl_inventario_inv_id`),
   CONSTRAINT `fk_tbl_inventario_producto_tbl_inventario1` FOREIGN KEY (`tbl_inventario_inv_id`) REFERENCES `tbl_inventario` (`inv_id`),
   CONSTRAINT `fk_tbl_inventario_producto_tbl_producto1` FOREIGN KEY (`tbl_producto_prod_id`) REFERENCES `tbl_producto` (`prod_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -316,6 +316,7 @@ CREATE TABLE `tbl_inventario_producto` (
 
 LOCK TABLES `tbl_inventario_producto` WRITE;
 /*!40000 ALTER TABLE `tbl_inventario_producto` DISABLE KEYS */;
+INSERT INTO `tbl_inventario_producto` VALUES (1,10,1,1),(2,10,2,1),(3,10,3,1),(4,10,4,1);
 /*!40000 ALTER TABLE `tbl_inventario_producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,7 +394,7 @@ CREATE TABLE `tbl_persona` (
   KEY `fk_tbl_persona_tbl_ciudad1_idx` (`tbl_ciudad_ciu_id`),
   CONSTRAINT `fk_tbl_persona_tbl_ciudad1` FOREIGN KEY (`tbl_ciudad_ciu_id`) REFERENCES `tbl_ciudad` (`ciu_id`),
   CONSTRAINT `fk_tbl_persona_tbl_tipo_documento1` FOREIGN KEY (`tbl_tipo_documento_doc_id`) REFERENCES `tbl_tipo_documento` (`doc_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -402,7 +403,7 @@ CREATE TABLE `tbl_persona` (
 
 LOCK TABLES `tbl_persona` WRITE;
 /*!40000 ALTER TABLE `tbl_persona` DISABLE KEYS */;
-INSERT INTO `tbl_persona` VALUES (1,'123456789','Juan Pérez','Gómez','3156782345','Calle 123','juan.perez@mail.com',1,1),(2,'987654321','María López','Martínez','3123456789','Carrera 45','maria.lopez@mail.com',2,2),(3,'111222333','Carlos Fernández','Rodríguez','3176543210','Avenida 67','carlos.fernandez@mail.com',3,3);
+INSERT INTO `tbl_persona` VALUES (1,'123456789','Juan Pérez','Gómez','3156782345','Calle 123','juan.perez@mail.com',1,1),(2,'987654321','María López','Martínez','3123456789','Carrera 45','maria.lopez@mail.com',2,2),(3,'111222333','Carlos Fernández','Rodríguez','3176543210','Avenida 67','carlos.fernandez@gmail.com',3,1),(36,'4356466556','Victor Alfonso','Puyo Epia','3217299734','Carrera 40 # 4N-58 segundo piso','victoralfonsopuyo@gmail.com',1,1),(43,'1061767207','Karol','Ledezma','3217299734','Carrera 40 # 4N-58 segundo piso','karol@gmail.com',1,2);
 /*!40000 ALTER TABLE `tbl_persona` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -462,7 +463,7 @@ CREATE TABLE `tbl_producto` (
   CONSTRAINT `fk_tbl_producto_tbl_presentacion1` FOREIGN KEY (`tbl_presentacion_pres_id`) REFERENCES `tbl_presentacion` (`pres_id`),
   CONSTRAINT `fk_tbl_producto_tbl_proveedor1` FOREIGN KEY (`tbl_proveedor_prov_id`) REFERENCES `tbl_proveedor` (`prov_id`),
   CONSTRAINT `fk_tbl_producto_tbl_unidad_medida1` FOREIGN KEY (`tbl_unidad_medida_und_id`) REFERENCES `tbl_unidad_medida` (`und_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -471,7 +472,7 @@ CREATE TABLE `tbl_producto` (
 
 LOCK TABLES `tbl_producto` WRITE;
 /*!40000 ALTER TABLE `tbl_producto` DISABLE KEYS */;
-INSERT INTO `tbl_producto` VALUES (1,'SUP001','Proteína','Suplemento de proteína en polvo',102,'L0001','2025-12-31',50000,30000,1,1,1,1,1),(2,'VIT001','Vitamina C','Complemento de vitamina C',200,'L0002','2024-06-30',10000,7000,2,2,2,2,2),(3,'MIN001','Magnesio','Suplemento de magnesio',150,'L0003','2023-12-31',15000,12000,3,3,3,3,3);
+INSERT INTO `tbl_producto` VALUES (1,'SUP001','Proteína','Suplemento de proteína en polvo',0,'L0001','2025-12-31',50000,30000,1,1,1,1,1),(2,'VIT001','Vitamina C','Complemento de vitamina C',300,'L0002','2024-06-30',10000,7000,2,2,2,2,2),(3,'MIN001','Magnesio','Suplemento de magnesio',150,'L0003','2023-12-31',15000,12000,3,3,3,3,3),(4,'ddd','Proteína','Suplemento de proteína en polvo',120,'L0001','2025-01-29',50000,30000,2,1,2,1,1);
 /*!40000 ALTER TABLE `tbl_producto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -488,7 +489,7 @@ CREATE TABLE `tbl_proveedor` (
   PRIMARY KEY (`prov_id`,`tbl_persona_pers_id`),
   KEY `fk_tbl_proveedor_tbl_persona1_idx` (`tbl_persona_pers_id`),
   CONSTRAINT `fk_tbl_proveedor_tbl_persona1` FOREIGN KEY (`tbl_persona_pers_id`) REFERENCES `tbl_persona` (`pers_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -550,7 +551,7 @@ CREATE TABLE `tbl_rolpermiso` (
 
 LOCK TABLES `tbl_rolpermiso` WRITE;
 /*!40000 ALTER TABLE `tbl_rolpermiso` DISABLE KEYS */;
-INSERT INTO `tbl_rolpermiso` VALUES (1,1),(2,1),(1,2),(2,2),(1,3),(2,3),(3,3),(1,4),(2,4),(1,5),(1,6),(1,7),(1,8),(1,9),(1,10),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18);
+INSERT INTO `tbl_rolpermiso` VALUES (1,1),(2,1),(1,2),(2,2),(1,3),(2,3),(3,3),(1,4),(2,4),(1,5),(2,5),(1,6),(2,6),(1,7),(2,7),(1,8),(1,9),(1,10),(1,12),(1,13),(1,14),(1,15),(1,16),(1,17),(1,18),(2,18);
 /*!40000 ALTER TABLE `tbl_rolpermiso` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -624,7 +625,7 @@ CREATE TABLE `tbl_usuario` (
   KEY `fk_tbl_usuario_tbl_rol1_idx` (`tbl_rol_rol_id`),
   CONSTRAINT `fk_tbl_usuario_tbl_empleado1` FOREIGN KEY (`tbl_empleado_emp_id`) REFERENCES `tbl_empleado` (`emp_id`),
   CONSTRAINT `fk_tbl_usuario_tbl_rol1` FOREIGN KEY (`tbl_rol_rol_id`) REFERENCES `tbl_rol` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -633,7 +634,7 @@ CREATE TABLE `tbl_usuario` (
 
 LOCK TABLES `tbl_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,'admin','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-01',1,1),(2,'empleado1','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-02',2,2),(3,'cliente1','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-03',3,3);
+INSERT INTO `tbl_usuario` VALUES (1,'admin','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-01',1,1),(2,'empleado1','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-02',2,2),(3,'cliente1','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-03',3,3),(16,'admin123','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Inactivo','2025-01-26',16,1);
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -656,7 +657,7 @@ CREATE TABLE `tbl_venta` (
   KEY `fk_tbl_venta_tbl_empleado1_idx` (`tbl_empleado_emp_id`),
   CONSTRAINT `fk_tbl_venta_tbl_cliente1` FOREIGN KEY (`tbl_cliente_cli_id`) REFERENCES `tbl_cliente` (`cli_id`),
   CONSTRAINT `fk_tbl_venta_tbl_empleado1` FOREIGN KEY (`tbl_empleado_emp_id`) REFERENCES `tbl_empleado` (`emp_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -665,7 +666,7 @@ CREATE TABLE `tbl_venta` (
 
 LOCK TABLES `tbl_venta` WRITE;
 /*!40000 ALTER TABLE `tbl_venta` DISABLE KEYS */;
-INSERT INTO `tbl_venta` VALUES (1,'2024-04-15',180000,'Venta de proteínas y vitaminas',1,1),(2,'2024-05-10',220000,'Venta de minerales y suplementos',2,2),(3,'2024-06-01',200000,'Venta de vitaminas',3,3),(4,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1);
+INSERT INTO `tbl_venta` VALUES (1,'2024-04-15',180000,'Venta de proteínas y vitaminas',1,1),(2,'2024-05-10',220000,'Venta de minerales y suplementos',2,2),(3,'2024-06-01',200000,'Venta de vitaminas',3,3),(4,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1),(12,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1),(13,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1);
 /*!40000 ALTER TABLE `tbl_venta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -884,11 +885,14 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteCliente`(
-    IN p_cliente_id INT
+    IN p_cliente_id INT,
+    IN p_per_id INT
 )
 BEGIN
-    DELETE FROM tbl_cliente
-    WHERE cliente_id = p_cliente_id;
+	DELETE FROM tbl_cliente
+	WHERE cli_id = p_cliente_id;
+	DELETE FROM tbl_persona
+	WHERE pers_id = p_per_id;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -928,12 +932,12 @@ BEGIN
 
     -- Eliminar la compra en tbl_compra
     DELETE FROM tbl_compra
-    WHERE compra_id = p_compra_id;
+    WHERE comp_id = p_compra_id;
 
     -- Actualizar el stock del producto en tbl_producto
     -- Restar la cantidad eliminada del inventario
     UPDATE tbl_producto
-    SET prod_cantidad_inventario = prod_cantidad_inventario - p_cantidad_eliminada
+    SET prod_cantidad_inventario = COALESCE(prod_cantidad_inventario - p_cantidad_eliminada, 0)
     WHERE prod_id = p_fkproducto_id;
 
     -- Confirmar la transacción
@@ -956,11 +960,17 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteEmployee`(
-    IN p_emp_id INT
+    IN p_emp_id INT,
+    IN p_per_id INT,
+	IN p_user_id INT
 )
 BEGIN
-    DELETE FROM tbl_empleado
-    WHERE emp_id = p_emp_id;
+	DELETE FROM tbl_usuario
+	WHERE usu_id = p_user_id;
+	DELETE FROM tbl_empleado
+	WHERE emp_id = p_emp_id;
+	DELETE FROM tbl_persona
+	WHERE pers_id = p_per_id;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -989,6 +999,36 @@ BEGIN
         SET prod_cantidad_inventario = 0
         WHERE prod_id = p_prod_id;
 
+        -- Eliminar el registro de inventario
+        DELETE FROM tbl_inventario
+        WHERE inv_id = p_inv_id;
+    ELSE
+        -- Si no existe el registro de inventario, lanzar un error
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'El registro de inventario especificado no existe.';
+    END IF;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spDeleteInventory` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteInventory`(
+    IN p_inv_id INT
+)
+BEGIN
+    -- Verificar si el registro existe en tbl_inventario
+    IF EXISTS (SELECT 1 FROM tbl_inventario WHERE inv_id = p_inv_id) THEN
         -- Eliminar el registro de inventario
         DELETE FROM tbl_inventario
         WHERE inv_id = p_inv_id;
@@ -1114,11 +1154,14 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spDeleteSupplier`(
-    IN p_pro_id INT
+    IN p_pro_id INT,
+    IN p_per_id INT
 )
 BEGIN
-    DELETE FROM tbl_proveedor
-    WHERE prov_id = p_pro_id;
+	DELETE FROM tbl_proveedor
+	WHERE prov_id = p_pro_id;
+	DELETE FROM tbl_persona
+	WHERE pers_id = p_per_id;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1337,14 +1380,25 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spGetEmployee`()
 BEGIN
     SELECT 
+		per.pers_id as PersonaID,
         emp.emp_id AS EmpleadoID,
+         td.doc_id as TipoDocumentoID,
+        td.doc_tipo_documento as TipoDocumento,
         per.pers_identificacion AS Identificacion,
         per.pers_nombre_razonsocial AS Nombre,
         per.pers_apellido AS Apellido,
         per.pers_telefono AS Telefono,
         per.pers_correo_electronico AS Correo,
+         pa.pais_id as PaisId,
+        pa.pais_nombre as Pais,
+         d.dep_id as DepartamentoId,
+        d.dep_nombre as Departamento,
+         c.ciu_id as CiudadId,
+        c.ciu_nombre as Ciudad,
+        per.pers_direccion as Direccion,
         usu.usu_id,
         usu.usu_usuario as usuario,
+        usu.usu_contrasena as contrasena,
         usu.tbl_rol_rol_id as rol_id, 
         rol.rol_nombre as rol,
         usu.usu_estado as estado,
@@ -1352,7 +1406,11 @@ BEGIN
     FROM tbl_empleado AS emp
 	INNER JOIN tbl_usuario as usu ON emp.emp_id = usu.tbl_empleado_emp_id
 	INNER JOIN tbl_persona as per ON per.pers_id = emp.tbl_persona_pers_id
-	INNER JOIN tbl_rol as rol ON rol.rol_id = usu.tbl_rol_rol_id;
+	INNER JOIN tbl_rol as rol ON rol.rol_id = usu.tbl_rol_rol_id
+	INNER JOIN tbl_tipo_documento td ON per.tbl_tipo_documento_doc_id = td.doc_id
+    INNER JOIN tbl_ciudad c ON per.tbl_ciudad_ciu_id = c.ciu_id
+    INNER JOIN tbl_departamento d ON c.tbl_departamento_dep_id = d.dep_id
+    INNER JOIN tbl_pais pa ON d.tbl_pais_pais_id = pa.pais_id;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1418,14 +1476,29 @@ DELIMITER ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spGetSupplier`()
 BEGIN
-    SELECT 
-		per.pers_identificacion AS Identificacion,
+	 SELECT 
+		pro.prov_id AS ProveedorID,
+		per.pers_id as PersonaID,
+		td.doc_id as TipoDocumentoID,
+        td.doc_tipo_documento as TipoDocumento,
+        per.pers_identificacion AS Identificacion,
         per.pers_nombre_razonsocial AS Nombre,
         per.pers_apellido AS Apellido,
         per.pers_telefono AS Telefono,
-        per.pers_correo_electronico AS Correo
+        per.pers_correo_electronico AS Correo,
+		pa.pais_id as PaisId,
+        pa.pais_nombre as Pais,
+		d.dep_id as DepartamentoId,
+        d.dep_nombre as Departamento,
+		c.ciu_id as CiudadId,
+        c.ciu_nombre as Ciudad,
+        per.pers_direccion as Direccion
     FROM tbl_proveedor as pro
-    INNER JOIN tbl_persona AS per ON pro.prov_id = per.pers_id;
+    INNER JOIN tbl_persona AS per ON pro.tbl_persona_pers_id = per.pers_id
+	INNER JOIN tbl_tipo_documento td ON per.tbl_tipo_documento_doc_id = td.doc_id
+    INNER JOIN tbl_ciudad c ON per.tbl_ciudad_ciu_id = c.ciu_id
+    INNER JOIN tbl_departamento d ON c.tbl_departamento_dep_id = d.dep_id
+    INNER JOIN tbl_pais pa ON d.tbl_pais_pais_id = pa.pais_id;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1504,6 +1577,8 @@ BEGIN
         p_precio_unitario, 
         p_numero_factura
     );
+
+
 
     -- Actualizar el stock del producto en tbl_producto
     UPDATE tbl_producto
@@ -1736,25 +1811,37 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `spInsertPersona`(
     IN p_telefono VARCHAR(20),
     IN p_email VARCHAR(45),
     IN p_tipo_documento_id INT,
-    IN p_pais_id INT,
-    IN p_departamento_id INT,
-    IN p_ciudad_id INT
+    IN p_ciudad_id INT,
+    IN p_usuario VARCHAR(45),
+	IN p_contrasena text,
+    IN p_estado VARCHAR(15),
+	IN p_rol_id INT,
+	IN p_tipo int
 )
 BEGIN
-    -- Validar que el país, departamento y ciudad existen
-    IF NOT EXISTS (SELECT 1 FROM tbl_pais WHERE pais_id = p_pais_id) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El país seleccionado no existe';
+    DECLARE last_person_id INT;
+	DECLARE last_employee_id INT;
+    
+    IF NOT EXISTS (SELECT 1 FROM tbl_tipo_documento WHERE doc_id = p_tipo_documento_id) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El tipo documento seleccionado no existe';
     END IF;
 
-    IF NOT EXISTS (SELECT 1 FROM tbl_departamento WHERE dep_id = p_departamento_id AND tbl_pais_pais_id = p_pais_id) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El departamento seleccionado no existe para el país especificado';
+    IF  p_tipo = 1  and NOT EXISTS ( SELECT 1 FROM tbl_rol WHERE rol_id = p_rol_id) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El rol seleccionado no existe';
     END IF;
 
-    IF NOT EXISTS (SELECT 1 FROM tbl_ciudad WHERE ciu_id = p_ciudad_id AND tbl_departamento_dep_id = p_departamento_id) THEN
+    IF NOT EXISTS (SELECT 1 FROM tbl_ciudad WHERE ciu_id = p_ciudad_id) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'La ciudad seleccionada no existe para el departamento especificado';
     END IF;
 
-    -- Insertar los datos de la persona
+	IF EXISTS (SELECT 1 FROM tbl_persona WHERE pers_identificacion = p_documento and tbl_tipo_documento_doc_id= p_tipo_documento_id) THEN
+       SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El documento de identidad ingresado ya se encuentra registrado';
+    END IF;
+   
+    IF  p_tipo = 1 and EXISTS (SELECT 1 FROM tbl_usuario WHERE usu_usuario = p_usuario)  THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El usuario ingresado ya se encuentra registrado';
+    END IF;
+
     INSERT INTO tbl_persona (
         pers_identificacion, pers_nombre_razonsocial, pers_apellido, 
 		pers_telefono, pers_direccion, pers_correo_electronico, tbl_tipo_documento_doc_id, tbl_ciudad_ciu_id
@@ -1763,6 +1850,18 @@ BEGIN
         p_documento, p_nombres, p_apellidos, 
         p_telefono, p_direccion, p_email, p_tipo_documento_id, p_ciudad_id
     );
+    
+	SET last_person_id = LAST_INSERT_ID();
+   
+    IF p_tipo = 1 then
+		INSERT INTO tbl_empleado (tbl_persona_pers_id) VALUES (last_person_id);
+        SET last_employee_id = LAST_INSERT_ID();
+        INSERT INTO tbl_usuario(usu_usuario,usu_contrasena,usu_estado,usu_fecha_creacion,tbl_empleado_emp_id,tbl_rol_rol_id)VALUES(p_usuario,p_contrasena,p_estado,CURDATE(), last_employee_id ,p_rol_id);
+    ELSEIF p_tipo = 2 THEN
+		INSERT INTO tbl_cliente (tbl_persona_pers_id) VALUES ( last_person_id);
+    ELSE 
+		INSERT INTO tbl_proveedor (tbl_persona_pers_id) VALUES (last_person_id);
+    END IF;   
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1910,6 +2009,54 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectCantidadDevolucionesPorPeriodo` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectCantidadDevolucionesPorPeriodo`(
+  IN p_fecha_ini varchar(10),
+  IN p_fecha_fin varchar(10)
+)
+BEGIN
+select  count(*) as total_devoluciones  from tbl_devolucion dev
+inner join tbl_venta vent on vent.vent_id=dev.tbl_venta_vent_id
+where  vent.vent_fecha>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and  vent.vent_fecha<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T');
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectCantidadVentasPorPeriodo` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectCantidadVentasPorPeriodo`(
+  IN p_fecha_ini varchar(10),
+  IN p_fecha_fin varchar(10)
+)
+BEGIN
+select  count(*) as total_ventas  from tbl_venta vent
+inner join tbl_detalle_ventaproducto det_prod on det_prod.tbl_venta_vent_id=vent.vent_id
+where  vent.vent_fecha>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and  vent.vent_fecha<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T');
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `spSelectCiudad` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -1946,7 +2093,9 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectCiudadDDL`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectCiudadDDL`(
+IN p_depId int
+)
 BEGIN
     SELECT
 	ciu.ciu_id as id,
@@ -1954,7 +2103,8 @@ BEGIN
 	ciu.ciu_nombre as ciudad,
 	dep.dep_nombre as departamento
 	FROM tbl_ciudad as ciu
-    INNER JOIN tbl_departamento as dep ON ciu.tbl_departamento_dep_id=dep.dep_id;
+    INNER JOIN tbl_departamento as dep ON ciu.tbl_departamento_dep_id=dep.dep_id
+    where dep.dep_id=p_depId or p_depId = 0;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1975,13 +2125,27 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectCliente`()
 BEGIN
     SELECT 
 		cli.cli_id AS ClienteID,
-		per.pers_identificacion AS Identificacion,
+		per.pers_id as PersonaID,
+		td.doc_id as TipoDocumentoID,
+        td.doc_tipo_documento as TipoDocumento,
+        per.pers_identificacion AS Identificacion,
         per.pers_nombre_razonsocial AS Nombre,
         per.pers_apellido AS Apellido,
         per.pers_telefono AS Telefono,
-        per.pers_correo_electronico AS Email
+        per.pers_correo_electronico AS Correo,
+         pa.pais_id as PaisId,
+        pa.pais_nombre as Pais,
+         d.dep_id as DepartamentoId,
+        d.dep_nombre as Departamento,
+		c.ciu_id as CiudadId,
+        c.ciu_nombre as Ciudad,
+        per.pers_direccion as Direccion
     FROM tbl_cliente as cli
-    INNER JOIN tbl_persona AS per ON cli.tbl_persona_pers_id = per.pers_id;
+    INNER JOIN tbl_persona AS per ON cli.tbl_persona_pers_id = per.pers_id
+	INNER JOIN tbl_tipo_documento td ON per.tbl_tipo_documento_doc_id = td.doc_id
+    INNER JOIN tbl_ciudad c ON per.tbl_ciudad_ciu_id = c.ciu_id
+    INNER JOIN tbl_departamento d ON c.tbl_departamento_dep_id = d.dep_id
+    INNER JOIN tbl_pais pa ON d.tbl_pais_pais_id = pa.pais_id;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -2006,6 +2170,63 @@ BEGIN
     FROM tbl_cliente as cli
     INNER JOIN tbl_persona AS per ON cli.tbl_persona_pers_id = per.pers_id;
 END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectComprasPorAnioYMes` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectComprasPorAnioYMes`(
+  IN p_fecha_ini varchar(10),
+  IN p_fecha_fin varchar(10)
+)
+BEGIN
+select  YEAR(vent.vent_fecha)as year,Month(vent.vent_fecha) as month,sum(COALESCE(det_prod.detv_cantidad_vendida * det_prod.detv_precio_unitario)) as total  from tbl_venta vent
+inner join tbl_detalle_ventaproducto det_prod on det_prod.tbl_venta_vent_id=vent.vent_id
+inner join tbl_producto prod on prod.prod_id = det_prod.tbl_producto_prod_id
+where  vent.vent_fecha>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and  vent.vent_fecha<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T')
+group by year,month
+order by year,month;
+ END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectComprasPorClientes` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectComprasPorClientes`(
+  IN p_fecha_ini varchar(10),
+  IN p_fecha_fin varchar(10),
+  In p_numero_grupos int
+)
+BEGIN
+ select   CONCAT(p_c.pers_identificacion,' ',p_c.pers_nombre_razonsocial,' ', p_c.pers_apellido) as cliente, sum(COALESCE(det_prod.detv_cantidad_vendida * det_prod.detv_precio_unitario)) as total from tbl_venta vent
+inner join tbl_detalle_ventaproducto det_prod on det_prod.tbl_venta_vent_id=vent.vent_id
+inner JOIN  tbl_cliente c ON vent.tbl_cliente_cli_id = c.cli_id
+inner JOIN tbl_persona p_c ON c.tbl_persona_pers_id = p_c.pers_id
+where  vent.vent_fecha>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and  vent.vent_fecha<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T')
+group by cliente
+order by total desc
+LIMIT p_numero_grupos;
+  END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
@@ -2079,7 +2300,9 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectDepartamentoDDL`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectDepartamentoDDL`(
+IN p_paisId int
+)
 BEGIN
     SELECT
 	dep.dep_id as id,
@@ -2087,7 +2310,8 @@ BEGIN
 	dep.dep_nombre as departamento,
 	pai.pais_nombre as pais
 	FROM tbl_departamento as dep
-    INNER JOIN tbl_pais as pai ON dep.tbl_pais_pais_id=pai.pais_id;
+    INNER JOIN tbl_pais as pai ON dep.tbl_pais_pais_id=pai.pais_id
+    where pai.pais_id=p_paisId or p_paisId = 0;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -2403,6 +2627,158 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectStockProductosVentasTotales` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectStockProductosVentasTotales`(
+  IN p_fecha_ini varchar(10),
+  IN p_fecha_fin varchar(10)
+)
+BEGIN
+ select  prod.prod_nombre, prod_cantidad_inventario, COALESCE((
+ select  sum(det_prod.detv_cantidad_vendida) as total_ventas  from tbl_venta vent
+inner join tbl_detalle_ventaproducto det_prod on det_prod.tbl_venta_vent_id=vent.vent_id
+where  vent.vent_fecha>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and  vent.vent_fecha<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T') and det_prod.tbl_producto_prod_id =  prod.prod_id
+),0) as promedio,prod_cantidad_inventario,COALESCE(prod_cantidad_inventario*prod_precio_compra, 0) as valor_existencias   
+from  tbl_producto as prod
+order by prod_cantidad_inventario;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectTotalComprasPorPeriodo` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectTotalComprasPorPeriodo`(
+  IN p_fecha_ini varchar(10),
+  IN p_fecha_fin varchar(10)
+)
+BEGIN
+select   sum(COALESCE(det_prod.detc_cantidad_comprada * det_prod.detc_precio_unitario, 0)) as total_compras from tbl_compra comp
+inner join tbl_detalle_compraproducto det_prod on det_prod.tbl_compra_comp_id=comp.comp_id
+where comp.comp_fecha_compra>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and comp.comp_fecha_compra<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T');
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectTotalInventario` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectTotalInventario`(
+)
+BEGIN
+select sum(COALESCE(prod_cantidad_inventario*prod_precio_compra, 0)) as total_inventario from  tbl_producto;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectTotalVentasPorPeriodo` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectTotalVentasPorPeriodo`(
+  IN p_fecha_ini varchar(10),
+  IN p_fecha_fin varchar(10)
+)
+BEGIN
+select  sum(COALESCE(det_prod.detv_cantidad_vendida * det_prod.detv_precio_unitario, 0)) as total_ventas  from tbl_venta vent
+inner join tbl_detalle_ventaproducto det_prod on det_prod.tbl_venta_vent_id=vent.vent_id
+where  vent.vent_fecha>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and  vent.vent_fecha<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T');
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectVentasPorAnioYMes` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectVentasPorAnioYMes`(
+  IN p_fecha_ini varchar(10),
+  IN p_fecha_fin varchar(10)
+)
+BEGIN
+    select  YEAR(comp.comp_fecha_compra) as year,Month(comp.comp_fecha_compra) as month, sum(COALESCE(det_prod.detc_cantidad_comprada * det_prod.detc_precio_unitario,0)) as total  from tbl_compra comp
+	inner join tbl_detalle_compraproducto det_prod on det_prod.tbl_compra_comp_id=comp.comp_id
+	inner join tbl_producto prod on prod.prod_id = det_prod.tbl_producto_prod_id
+	where  comp.comp_fecha_compra>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and comp.comp_fecha_compra<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T')
+	group by year,month
+	order by year,month;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `spSelectVentasPorCategoria` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spSelectVentasPorCategoria`(
+  IN p_fecha_ini varchar(10),
+  IN p_fecha_fin varchar(10),
+  In p_numero_grupos int
+)
+BEGIN
+ select  cat.cat_descripcion, sum(COALESCE(det_prod.detv_cantidad_vendida * det_prod.detv_precio_unitario)) as total from tbl_venta vent
+inner join tbl_detalle_ventaproducto det_prod on det_prod.tbl_venta_vent_id=vent.vent_id
+inner join tbl_producto prod on prod.prod_id = det_prod.tbl_producto_prod_id
+INNER JOIN tbl_categoria AS cat ON prod.tbl_categoria_cat_id = cat.cat_id
+where  vent.vent_fecha>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and  vent.vent_fecha<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T')
+group by cat.cat_descripcion
+LIMIT p_numero_grupos;
+  END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `spTypeDocDDL` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -2536,7 +2912,7 @@ BEGIN
     UPDATE tbl_compra
     SET comp_fecha_compra = p_fecha_compra, 
         comp_total = p_total
-    WHERE compra_id = p_compra_id;
+    WHERE comp_id = p_compra_id;
 
     -- Actualizar la tabla tbl_detalle_compraproducto
     UPDATE tbl_detalle_compraproducto
@@ -2689,7 +3065,6 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spUpdatePersona`(
-    IN p_pers_id INT,
     IN p_documento VARCHAR(45),
     IN p_nombres VARCHAR(45),
     IN p_apellidos VARCHAR(45),
@@ -2697,30 +3072,37 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `spUpdatePersona`(
     IN p_telefono VARCHAR(20),
     IN p_email VARCHAR(45),
     IN p_tipo_documento_id INT,
-    IN p_pais_id INT,
-    IN p_departamento_id INT,
-    IN p_ciudad_id INT
+    IN p_ciudad_id INT,
+    IN p_usuario VARCHAR(45),
+	IN p_contrasena text,
+    IN p_estado VARCHAR(15),
+	IN p_rol_id INT,
+	IN p_tipo int,
+    IN p_usu_id int,
+    IN p_pers_id int
 )
 BEGIN
-    -- Validar que la persona existe
-    IF NOT EXISTS (SELECT 1 FROM tbl_persona WHERE pers_id = p_pers_id) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'La persona no existe';
+  
+    IF NOT EXISTS (SELECT 1 FROM tbl_tipo_documento WHERE doc_id = p_tipo_documento_id) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El tipo documento seleccionado no existe';
     END IF;
-
-    -- Validar que el país, departamento y ciudad existen
-    IF NOT EXISTS (SELECT 1 FROM tbl_pais WHERE pais_id = p_pais_id) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El país seleccionado no existe';
+    
+    IF  p_tipo = 1 and NOT EXISTS (SELECT 1 FROM tbl_rol WHERE rol_id = p_rol_id ) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El rol seleccionado no existe';
     END IF;
-
-    IF NOT EXISTS (SELECT 1 FROM tbl_departamento WHERE dep_id = p_departamento_id AND tbl_pais_pais_id = p_pais_id) THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El departamento seleccionado no existe para el país especificado';
-    END IF;
-
-    IF NOT EXISTS (SELECT 1 FROM tbl_ciudad WHERE ciu_id = p_ciudad_id AND tbl_departamento_dep_id = p_departamento_id) THEN
+    
+    IF NOT EXISTS (SELECT 1 FROM tbl_ciudad WHERE ciu_id = p_ciudad_id) THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'La ciudad seleccionada no existe para el departamento especificado';
     END IF;
 
-    -- Actualizar los datos de la persona
+	IF EXISTS (SELECT 1 FROM tbl_persona WHERE pers_identificacion = p_documento and tbl_tipo_documento_doc_id= p_tipo_documento_id and  pers_id <> p_pers_id) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El documento de identidad ingresado ya se encuentra registrado';
+    END IF;
+    
+    IF  p_tipo = 1 and EXISTS (SELECT 1 FROM tbl_usuario WHERE usu_usuario = p_usuario and usu_id <> p_usu_id) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'El usuario ingresado ya se encuentra registrado';
+    END IF;
+        
     UPDATE tbl_persona
     SET 
         pers_identificacion = p_documento,
@@ -2733,6 +3115,16 @@ BEGIN
         tbl_ciudad_ciu_id = p_ciudad_id
     WHERE 
         pers_id = p_pers_id;
+    
+    IF p_tipo = 1 then
+        UPDATE tbl_usuario
+		SET
+			usu_usuario = p_usuario,
+			usu_contrasena = p_contrasena,
+			usu_estado = p_estado,
+			tbl_rol_rol_id = p_rol_id
+		WHERE usu_id = p_usu_id;
+    END IF;   
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -3333,7 +3725,9 @@ BEGIN
     p_e.pers_apellido AS apellido_empleado, 
     p_c.pers_identificacion AS identificacion_cliente,
     p_c.pers_nombre_razonsocial AS nombre_cliente, 
-    p_c.pers_apellido AS apellido_cliente
+    p_c.pers_apellido AS apellido_cliente,
+    e.emp_id,
+    c.cli_id
 FROM 
     tbl_venta v
 LEFT JOIN 
@@ -3361,4 +3755,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-25 16:42:30
+-- Dump completed on 2025-01-29  7:45:37
