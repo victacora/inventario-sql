@@ -80,7 +80,7 @@ CREATE TABLE `tbl_cliente` (
   PRIMARY KEY (`cli_id`,`tbl_persona_pers_id`),
   KEY `fk_tbl_cliente_tbl_persona1_idx` (`tbl_persona_pers_id`),
   CONSTRAINT `fk_tbl_cliente_tbl_persona1` FOREIGN KEY (`tbl_persona_pers_id`) REFERENCES `tbl_persona` (`pers_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `tbl_cliente` (
 
 LOCK TABLES `tbl_cliente` WRITE;
 /*!40000 ALTER TABLE `tbl_cliente` DISABLE KEYS */;
-INSERT INTO `tbl_cliente` VALUES (1,1),(2,2),(3,3),(5,43);
+INSERT INTO `tbl_cliente` VALUES (1,1),(2,2),(3,3),(5,43),(6,52);
 /*!40000 ALTER TABLE `tbl_cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,7 +114,7 @@ CREATE TABLE `tbl_compra` (
 
 LOCK TABLES `tbl_compra` WRITE;
 /*!40000 ALTER TABLE `tbl_compra` DISABLE KEYS */;
-INSERT INTO `tbl_compra` VALUES (1,'2024-01-10',150000),(2,'2024-02-05',200000),(3,'2024-03-20',175000),(4,'2025-01-22',24),(5,'2024-02-05',140000),(6,'2024-02-05',140000),(7,'2024-02-05',140000),(8,'2024-02-05',140000),(9,'2024-02-05',140000),(10,'2024-01-10',50000),(11,'2024-01-10',50000),(12,'2024-01-10',50000),(13,'2025-01-28',240),(14,'2025-01-28',240),(15,'2025-01-28',240),(16,'2025-01-28',240),(17,'2025-01-28',240),(18,'2025-01-28',240),(19,'2025-01-28',240),(20,'2025-01-28',240),(21,'2025-01-28',240),(22,'2024-01-10',50000);
+INSERT INTO `tbl_compra` VALUES (1,'2025-01-28',150000),(2,'2025-01-28',200000),(3,'2025-01-28',175000),(4,'2025-01-22',24),(5,'2025-01-28',140000),(6,'2025-01-28',140000),(7,'2025-01-28',140000),(8,'2025-01-28',140000),(9,'2025-01-28',140000),(10,'2025-01-28',50000),(11,'2025-01-28',50000),(12,'2025-01-28',50000),(13,'2025-01-28',240),(14,'2025-01-28',240),(15,'2025-01-28',240),(16,'2025-01-28',240),(17,'2025-01-28',240),(18,'2025-01-28',240),(19,'2025-01-28',240),(20,'2025-01-28',240),(21,'2025-01-28',240),(22,'2025-01-28',50000);
 /*!40000 ALTER TABLE `tbl_compra` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,7 +133,7 @@ CREATE TABLE `tbl_departamento` (
   PRIMARY KEY (`dep_id`,`tbl_pais_pais_id`),
   KEY `fk_tbl_departamento_tbl_pais1_idx` (`tbl_pais_pais_id`),
   CONSTRAINT `fk_tbl_departamento_tbl_pais1` FOREIGN KEY (`tbl_pais_pais_id`) REFERENCES `tbl_pais` (`pais_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `tbl_departamento` (
 
 LOCK TABLES `tbl_departamento` WRITE;
 /*!40000 ALTER TABLE `tbl_departamento` DISABLE KEYS */;
-INSERT INTO `tbl_departamento` VALUES (1,'001','Cauca',1),(2,'002','Cundinamarca',1),(3,'003','Antioquia',1),(4,'002','Washington',15),(5,'002','Washington',5);
+INSERT INTO `tbl_departamento` VALUES (1,'001','Cauca',1),(2,'002','Cundinamarca',1),(3,'003','Antioquia',1),(4,'002','Washington',15),(5,'002','Washington',5),(6,'004','Valle del Cauca',1);
 /*!40000 ALTER TABLE `tbl_departamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,7 +249,7 @@ CREATE TABLE `tbl_empleado` (
   PRIMARY KEY (`emp_id`,`tbl_persona_pers_id`),
   KEY `fk_tbl_empleado_tbl_persona1_idx` (`tbl_persona_pers_id`),
   CONSTRAINT `fk_tbl_empleado_tbl_persona1` FOREIGN KEY (`tbl_persona_pers_id`) REFERENCES `tbl_persona` (`pers_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -258,7 +258,7 @@ CREATE TABLE `tbl_empleado` (
 
 LOCK TABLES `tbl_empleado` WRITE;
 /*!40000 ALTER TABLE `tbl_empleado` DISABLE KEYS */;
-INSERT INTO `tbl_empleado` VALUES (1,1),(2,2),(3,3),(16,36);
+INSERT INTO `tbl_empleado` VALUES (1,1),(2,2),(3,3),(16,36),(20,53);
 /*!40000 ALTER TABLE `tbl_empleado` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -394,7 +394,7 @@ CREATE TABLE `tbl_persona` (
   KEY `fk_tbl_persona_tbl_ciudad1_idx` (`tbl_ciudad_ciu_id`),
   CONSTRAINT `fk_tbl_persona_tbl_ciudad1` FOREIGN KEY (`tbl_ciudad_ciu_id`) REFERENCES `tbl_ciudad` (`ciu_id`),
   CONSTRAINT `fk_tbl_persona_tbl_tipo_documento1` FOREIGN KEY (`tbl_tipo_documento_doc_id`) REFERENCES `tbl_tipo_documento` (`doc_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -403,7 +403,7 @@ CREATE TABLE `tbl_persona` (
 
 LOCK TABLES `tbl_persona` WRITE;
 /*!40000 ALTER TABLE `tbl_persona` DISABLE KEYS */;
-INSERT INTO `tbl_persona` VALUES (1,'123456789','Juan Pérez','Gómez','3156782345','Calle 123','juan.perez@mail.com',1,1),(2,'987654321','María López','Martínez','3123456789','Carrera 45','maria.lopez@mail.com',2,2),(3,'111222333','Carlos Fernández','Rodríguez','3176543210','Avenida 67','carlos.fernandez@gmail.com',3,1),(36,'4356466556','Victor Alfonso','Puyo Epia','3217299734','Carrera 40 # 4N-58 segundo piso','victoralfonsopuyo@gmail.com',1,1),(43,'1061767207','Karol','Ledezma','3217299734','Carrera 40 # 4N-58 segundo piso','karol@gmail.com',1,2);
+INSERT INTO `tbl_persona` VALUES (1,'123456789','Juan Pérez','Gómez','3156782345','Calle 123','juan.perez@mail.com',1,1),(2,'987654321','María López','Martínez','3123456789','Carrera 45','maria.lopez@mail.com',2,2),(3,'111222333','Carlos Fernández','Rodríguez','3176543210','Avenida 67','carlos.fernandez@gmail.com',3,1),(36,'4356466556','Victor Alfonso','Puyo Epia','3217299734','Carrera 40 # 4N-58 segundo piso','victoralfonsopuyo@gmail.com',1,1),(43,'1061767207','Karol','Ledezma','3217299734','Carrera 40 # 4N-58 segundo piso','karol@gmail.com',1,2),(52,'1061767208','Karol','Ledezma','3217299734','Carrera 40 # 4N-58 segundo piso','karol.ledezma@gmail.com',1,1),(53,'4356466343','Yina','Ledezma','321748444','Carrera 40 # 4N-58 segundo piso','yina@gmail.com',1,1);
 /*!40000 ALTER TABLE `tbl_persona` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -625,7 +625,7 @@ CREATE TABLE `tbl_usuario` (
   KEY `fk_tbl_usuario_tbl_rol1_idx` (`tbl_rol_rol_id`),
   CONSTRAINT `fk_tbl_usuario_tbl_empleado1` FOREIGN KEY (`tbl_empleado_emp_id`) REFERENCES `tbl_empleado` (`emp_id`),
   CONSTRAINT `fk_tbl_usuario_tbl_rol1` FOREIGN KEY (`tbl_rol_rol_id`) REFERENCES `tbl_rol` (`rol_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -634,7 +634,7 @@ CREATE TABLE `tbl_usuario` (
 
 LOCK TABLES `tbl_usuario` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,'admin','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-01',1,1),(2,'empleado1','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-02',2,2),(3,'cliente1','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-03',3,3),(16,'admin123','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Inactivo','2025-01-26',16,1);
+INSERT INTO `tbl_usuario` VALUES (1,'admin','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-01',1,1),(2,'empleado1','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-02',2,2),(3,'cliente1','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2024-01-03',3,3),(16,'admin123','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Inactivo','2025-01-26',16,1),(20,'admin1234','d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1','Activo','2025-01-29',20,2);
 /*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -666,7 +666,7 @@ CREATE TABLE `tbl_venta` (
 
 LOCK TABLES `tbl_venta` WRITE;
 /*!40000 ALTER TABLE `tbl_venta` DISABLE KEYS */;
-INSERT INTO `tbl_venta` VALUES (1,'2024-04-15',180000,'Venta de proteínas y vitaminas',1,1),(2,'2024-05-10',220000,'Venta de minerales y suplementos',2,2),(3,'2024-06-01',200000,'Venta de vitaminas',3,3),(4,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1),(12,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1),(13,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1);
+INSERT INTO `tbl_venta` VALUES (1,'2025-01-15',180000,'Venta de proteínas y vitaminas',1,1),(2,'2025-01-15',220000,'Venta de minerales y suplementos',2,2),(3,'2025-01-15',200000,'Venta de vitaminas',3,3),(4,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1),(12,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1),(13,'2025-01-23',180000,'Venta de proteínas y vitaminas',1,1);
 /*!40000 ALTER TABLE `tbl_venta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2646,7 +2646,7 @@ BEGIN
  select  sum(det_prod.detv_cantidad_vendida) as total_ventas  from tbl_venta vent
 inner join tbl_detalle_ventaproducto det_prod on det_prod.tbl_venta_vent_id=vent.vent_id
 where  vent.vent_fecha>=STR_TO_DATE(CONCAT(p_fecha_ini, ' ', '00:00:00'), '%d/%m/%Y %T') and  vent.vent_fecha<=STR_TO_DATE(CONCAT(p_fecha_fin, ' ', '23:59:59'), '%d/%m/%Y %T') and det_prod.tbl_producto_prod_id =  prod.prod_id
-),0) as promedio,prod_cantidad_inventario,COALESCE(prod_cantidad_inventario*prod_precio_compra, 0) as valor_existencias   
+),0) as promedio,prod_precio_compra,COALESCE(prod_cantidad_inventario*prod_precio_compra, 0) as valor_existencias   
 from  tbl_producto as prod
 order by prod_cantidad_inventario;
   END ;;
@@ -3755,4 +3755,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-01-29  7:45:37
+-- Dump completed on 2025-01-29 11:54:28
